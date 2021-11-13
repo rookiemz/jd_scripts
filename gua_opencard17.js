@@ -19,7 +19,7 @@ guaopencard17="true"
 
 
 */
-const $ = new Env('我爱520_食品会员');
+const $ = new Env('我爱520_京东手机');
 const Faker=require('./sign_graphics_validate.js') 
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 
@@ -92,9 +92,9 @@ async function run() {
       return
     }
     let config = [
-      {configCode:'c884f4e473884217ad8fabcc160ecda0',configName:'我爱520-1'},
-      //{configCode:'40c2d87a71ec40cf96badb810818bb92',configName:'我爱520-2'},
-      //{configCode:'b3cc4f6e5e924c3d82b10404f91740ce',configName:'我爱520-3'},
+      {configCode:'9fdb6cdb7e974b22994ea774ea566470',configName:'我爱520-1'},
+      //{configCode:'774d2bb6b347497fb49368d55509052c',configName:'我爱520-2'},
+      //{configCode:'0dcbe214f3ec4ccf8d103a466026bf5d',configName:'我爱520-3'},
       //{configCode:'ce04c87546ea40cc8f601e85f2dda2a9',configName:'秋新资任务组件 组1'},
     ]
     for(let i in config){
