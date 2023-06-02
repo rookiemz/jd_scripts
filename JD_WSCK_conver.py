@@ -10,7 +10,7 @@ import random,time
 packages.urllib3.disable_warnings()
 from urllib.parse import unquote
 """
-cron 57 21,9 * * *	
+cron 10 10,15 * * *	
 """
 hadsend=True
 UserAgent=""
@@ -186,7 +186,7 @@ def subcookie(pt_pin, cookie, token):
             strptpin=pt_pin
             if re.search('%', strptpin):
                 strptpin = unquote(strptpin, 'utf-8')
-            url = 'http://127.0.0.1:5600/api/envs'
+            url = 'http://127.0.0.1:5555/api/envs'
             headers = {'Authorization': f'Bearer {token}'}
             body = {
                 'searchValue': pt_pin,
@@ -213,7 +213,7 @@ def subcookie(pt_pin, cookie, token):
                         
             if old:
                 put(url, json=body, headers=headers)
-                url = 'http://127.0.0.1:5600/api/envs/enable'
+                url = 'http://127.0.0.1:5555/api/envs/enable'
                 if isline:
                     body = [body['_id']]
                 else:
@@ -233,7 +233,7 @@ def getRemark(pt_pin,token):
         strreturn=pt_pin
 
     if token!="":
-        url = 'http://127.0.0.1:5600/api/envs'
+        url = 'http://127.0.0.1:5555/api/envs'
         headers = {'Authorization': f'Bearer {token}'}
         body = {
             'searchValue': pt_pin,
@@ -288,7 +288,7 @@ def main():
 
     with open(config, "r", encoding="utf-8") as f1:
         token = json.load(f1)['token']
-    url = 'http://127.0.0.1:5600/api/envs'
+    url = 'http://127.0.0.1:5555/api/envs'
     headers = {'Authorization': f'Bearer {token}'}
     body = {
         'searchValue': 'JD_WSCK',
@@ -320,7 +320,7 @@ def main():
             if "fake_" in cookie:
                 message = f"pin为{newpin}的wskey过期了！"
                 printf(message)
-                url = 'http://127.0.0.1:5600/api/envs/disable'
+                url = 'http://127.0.0.1:5555/api/envs/disable'
                 try:
                     body = [data['_id']]
                 except:   
